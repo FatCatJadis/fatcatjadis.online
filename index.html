@@ -1,5 +1,321 @@
 <!doctype html>
-<html>
-  <title>fatcatjadis' website</title>
-  <h1>hi</h1>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="description" content="Whiskr — watch long-form videos and swipe through Shorts.">
+  <title>Whiskr</title>
+  <link rel="preconnect" href="https://fatcatsuite-whiskr.onrender.com">
+  <link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body data-mode="long">
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+    <symbol id="i-shorts" viewBox="0 0 24 24"><path d="m9.2 3.1 7.6-1.5a3.1 3.1 0 0 1 1.5 6L15.8 8l2.8.8a3.1 3.1 0 0 1-.4 6.1l-3.3.7 1.8 1.1a3.1 3.1 0 0 1-1.2 5.7l-7.6 1.5a3.1 3.1 0 0 1-1.5-6l2.5-.5-2.8-.8a3.1 3.1 0 0 1 .4-6.1l3.3-.7L8 8.7a3.1 3.1 0 0 1 1.2-5.6Z"/><path class="icon-cutout" d="m10 9 6 3-6 3Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-comment" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.5 9.5 0 0 1-4-.9L3 21l1.6-4.5A8.4 8.4 0 1 1 21 11.5Z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 15v5h16v-5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4Zm4 3a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4Zm4 5 6 6m0-6-6 6"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5M18.5 9A7 7 0 0 0 6 6.5L4 11m16 2-2 4.5A7 7 0 0 1 5.5 15"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4Z"/></symbol>
+    <symbol id="i-live" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4m8.4-8.4a6 6 0 0 1 0 8.4M4.5 4.5a10.6 10.6 0 0 0 0 15m15-15a10.6 10.6 0 0 1 0 15"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 6 13 4h-2L9.5 6H5a2 2 0 0 0-2 2v10h18V8a2 2 0 0 0-2-2Z"/><circle cx="12" cy="12" r="3.5"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21m-4 0h8"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-button menu-button" type="button" aria-label="Toggle menu" id="menuButton"><svg><use href="#i-menu"/></svg></button>
+        <a class="brand" href="#/long" aria-label="Whiskr home">
+          <span class="brand-name">Whiskr</span>
+        </a>
+      </div>
+
+      <nav class="mode-switch" aria-label="Video format">
+        <button class="mode-button active" type="button" data-mode-target="long">Videos</button>
+        <button class="mode-button" type="button" data-mode-target="short">Shorts</button>
+        <button class="mode-button" type="button" data-mode-target="live">Live</button>
+        <span class="mode-indicator"></span>
+      </nav>
+
+      <form class="search-form" id="searchForm" role="search">
+        <label class="sr-only" for="searchInput">Search Whiskr</label>
+        <input id="searchInput" type="search" placeholder="Search" autocomplete="off">
+        <button type="submit" aria-label="Search"><svg><use href="#i-search"/></svg></button>
+      </form>
+
+      <div class="topbar-actions">
+        <button class="create-button" id="openUploadButton" type="button" aria-label="Create"><svg><use href="#i-plus"/></svg><span>Create</span></button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="side-link active" href="#/long" data-nav="long"><svg><use href="#i-home"/></svg><span>Home</span></a>
+        <a class="side-link" href="#/shorts" data-nav="short"><svg><use href="#i-shorts"/></svg><span>Shorts</span></a>
+        <a class="side-link" href="#/live" data-nav="live"><svg><use href="#i-live"/></svg><span>Live</span></a>
+        <button class="side-link" type="button" data-scroll-explore><svg><use href="#i-compass"/></svg><span>Explore</span></button>
+      </nav>
+      <div class="sidebar-section">
+        <h2>Explore</h2>
+        <button type="button" class="topic-chip" data-query="Trending">🔥 Trending</button>
+        <button type="button" class="topic-chip" data-query="Music">🎵 Music</button>
+        <button type="button" class="topic-chip" data-query="Gaming">🎮 Gaming</button>
+        <button type="button" class="topic-chip" data-query="Sports">🏆 Sports</button>
+      </div>
+      <footer class="sidebar-footer"><span>About</span><span>Privacy</span><span>Terms</span><small>© 2026 Whiskr</small></footer>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+      <section class="view active" id="longView" aria-labelledby="longHeading">
+        <div class="category-strip" id="categoryStrip">
+          <button class="category active" type="button" data-query="">All</button>
+          <button class="category" type="button" data-query="Music">Music</button>
+          <button class="category" type="button" data-query="Gaming">Gaming</button>
+          <button class="category" type="button" data-query="Live">Live</button>
+          <button class="category" type="button" data-query="News">News</button>
+          <button class="category" type="button" data-query="Comedy">Comedy</button>
+          <button class="category" type="button" data-query="Podcasts">Podcasts</button>
+          <button class="category" type="button" data-query="Recently uploaded">Recently uploaded</button>
+        </div>
+        <div class="section-heading">
+          <div><span class="eyebrow">Made for you</span><h1 id="longHeading">Recommended</h1></div>
+          <button class="text-button" type="button" id="refreshFeedButton"><svg><use href="#i-refresh"/></svg>Refresh</button>
+        </div>
+        <div class="feed-status" id="longStatus" role="status"></div>
+        <div class="video-grid" id="videoGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="view shorts-view" id="shortsView" aria-label="Shorts feed">
+        <div class="shorts-tabs" role="tablist" aria-label="Shorts feed filter">
+          <button class="active" type="button" role="tab" aria-selected="true" aria-controls="shortsFeed" data-short-tab="for-you">For You</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="shortsFeed" data-short-tab="latest" tabindex="-1">Latest</button>
+        </div>
+        <div class="shorts-feed" id="shortsFeed" role="tabpanel"></div>
+        <div class="shorts-stepper desktop-only" aria-label="Short navigation">
+          <button type="button" id="previousShort" aria-label="Previous short">⌃</button>
+          <button type="button" id="nextShort" aria-label="Next short">⌄</button>
+        </div>
+      </section>
+
+      <section class="view live-view" id="liveView" aria-labelledby="liveTitle">
+        <header class="live-page-header">
+          <div>
+            <span class="live-status-pill" id="liveStatusPill"><i></i><span id="liveStatusText">Offline</span></span>
+            <h1 id="liveTitle">Whiskr Live</h1>
+            <p id="liveSubtitle">Live streams will appear here the moment they start.</p>
+          </div>
+          <button class="go-live-button" id="openLiveStudioButton" type="button" aria-label="Open live studio"><svg><use href="#i-live"/></svg><span>Open live studio</span></button>
+        </header>
+
+        <div class="live-layout">
+          <article class="live-program-card">
+            <div class="live-stage" id="liveStage">
+              <video id="livePlayer" autoplay muted playsinline></video>
+              <div class="live-offline" id="liveOffline">
+                <span class="live-orbit"><i></i><i></i><b></b></span>
+                <strong>No live stream right now</strong>
+                <p>Keep this tab open and Whiskr will connect automatically.</p>
+              </div>
+              <div class="live-player-badges">
+                <span class="on-air-badge">LIVE</span>
+                <span class="live-viewer-badge"><svg><use href="#i-live"/></svg><span id="liveViewerCountStage">0</span></span>
+              </div>
+              <button class="live-sound-button hidden" id="liveSoundButton" type="button"><svg><use href="#i-volume"/></svg><span>Tap for sound</span></button>
+            </div>
+            <footer class="live-program-meta">
+              <div><span class="eyebrow">Now streaming</span><h2 id="liveProgramTitle">Whiskr Live</h2><p class="live-host-line hidden" id="liveHostText"></p><p class="live-description hidden" id="liveDescription"></p><p id="liveStartedText">Waiting for a broadcaster</p></div>
+              <div class="live-connection" id="liveConnectionStatus"><i></i><span>Connecting</span></div>
+            </footer>
+          </article>
+
+          <aside class="live-chat-card" aria-labelledby="liveChatHeading">
+            <header><div><span class="eyebrow">Community</span><h2 id="liveChatHeading">Live chat</h2></div><span class="chat-count"><span id="liveViewerCount">0</span> watching</span></header>
+            <div class="live-chat-list" id="liveChatList" aria-live="polite"><p class="live-chat-empty">Chat messages will show up here.</p></div>
+            <form class="live-chat-form" id="liveChatForm">
+              <label class="sr-only" for="liveChatName">Chat nickname</label>
+              <input class="live-chat-name" id="liveChatName" type="text" minlength="2" maxlength="24" placeholder="Nickname" autocomplete="nickname">
+              <div class="live-chat-compose"><label class="sr-only" for="liveChatMessage">Message</label><input id="liveChatMessage" type="text" maxlength="300" placeholder="Say something..." autocomplete="off"><button type="submit">Send</button></div>
+            </form>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view watch-view" id="watchView" aria-label="Watch video">
+        <button class="back-button" type="button" id="backButton"><svg><use href="#i-chevron-left"/></svg>Back</button>
+        <div class="watch-layout">
+          <div class="watch-primary">
+            <div class="watch-player"><video id="watchPlayer" controls autoplay playsinline></video></div>
+            <h1 class="watch-title" id="watchTitle"></h1>
+            <div class="watch-meta-row">
+              <div class="watch-actions">
+                <button class="pill-action" id="watchLikeButton" type="button" aria-label="Like video" aria-pressed="false"><svg><use href="#i-heart"/></svg><span>Like</span></button>
+                <button class="pill-action" id="watchShareButton" type="button"><svg><use href="#i-share"/></svg><span>Share</span></button>
+                <button class="pill-action icon-only" type="button" aria-label="More options"><svg><use href="#i-more"/></svg></button>
+              </div>
+            </div>
+            <div class="description-card" id="watchDescription"></div>
+            <section class="watch-comments" aria-labelledby="commentsHeading">
+              <div class="comments-heading"><h2 id="commentsHeading"><span id="watchCommentCount">0</span> Comments</h2></div>
+              <form class="comment-form" id="watchCommentForm"><input type="text" name="comment" aria-label="Add a comment" placeholder="Add a comment…" maxlength="500" autocomplete="off"><button type="submit">Comment</button></form>
+              <div class="comments-list" id="watchCommentsList"></div>
+            </section>
+          </div>
+          <aside class="related-panel"><h2>Up next</h2><div id="relatedVideos"></div></aside>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a class="active" href="#/long" data-nav="long"><svg><use href="#i-home"/></svg><span>Home</span></a>
+      <a href="#/shorts" data-nav="short"><svg><use href="#i-shorts"/></svg><span>Shorts</span></a>
+      <button class="mobile-create" type="button" data-open-upload aria-label="Create"><svg><use href="#i-plus"/></svg></button>
+      <a href="#/live" data-nav="live"><svg><use href="#i-live"/></svg><span>Live</span></a>
+      <button type="button" data-mobile-refresh><svg><use href="#i-refresh"/></svg><span>Refresh</span></button>
+    </nav>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="comments-drawer" id="commentsDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="drawerTitle">
+    <header><h2 id="drawerTitle">Comments <span id="drawerCommentCount"></span></h2><button class="icon-button" type="button" id="closeComments" aria-label="Close comments"><svg><use href="#i-close"/></svg></button></header>
+    <div class="comments-list" id="drawerCommentsList"></div>
+    <form class="drawer-comment-form" id="drawerCommentForm"><input type="text" name="comment" aria-label="Add a comment" placeholder="Add comment…" maxlength="500" autocomplete="off"><button type="submit">Post</button></form>
+  </aside>
+
+  <dialog class="app-dialog nickname-dialog" id="nicknameDialog">
+    <button class="dialog-close icon-button" type="button" data-close-dialog aria-label="Close"><svg><use href="#i-close"/></svg></button>
+    <div class="dialog-logo"><span class="brand-mark"><span></span></span></div>
+    <h2>What should we call you?</h2>
+    <p class="dialog-copy">Stay anonymous—this nickname is only shown beside your comments.</p>
+    <form id="nicknameForm">
+      <label>Nickname<input name="nickname" type="text" minlength="2" maxlength="24" placeholder="e.g. cosmiccat" autocomplete="nickname" required></label>
+      <div class="form-error" id="nicknameError" role="alert"></div>
+      <button class="primary-submit" type="submit">Continue</button>
+    </form>
+    <small class="legal-copy">Your nickname is requested each time and is not saved.</small>
+  </dialog>
+
+  <dialog class="app-dialog upload-dialog" id="uploadDialog">
+    <button class="dialog-close icon-button" type="button" data-close-dialog aria-label="Close"><svg><use href="#i-close"/></svg></button>
+    <header><span class="eyebrow">Whiskr Studio</span><h2>Upload a video</h2><p>Share a Short or publish a full-length video.</p></header>
+    <form id="uploadForm">
+      <div class="format-picker" role="radiogroup" aria-label="Video format">
+        <label><input type="radio" name="type" value="long" checked><span><svg><use href="#i-play"/></svg><strong>Video</strong><small>Landscape, long-form</small></span></label>
+        <label><input type="radio" name="type" value="short"><span><svg><use href="#i-shorts"/></svg><strong>Short</strong><small>Vertical, quick watch</small></span></label>
+      </div>
+      <label>Title<input name="title" type="text" maxlength="100" placeholder="Give your video a title" required></label>
+      <label>Description<textarea name="description" rows="3" maxlength="1000" placeholder="Tell viewers about your video"></textarea></label>
+      <div class="file-grid">
+        <label class="file-drop"><input name="video" type="file" accept="video/mp4" required><svg><use href="#i-upload"/></svg><strong>Choose video</strong><small>MP4 video</small><span data-file-name="video">No file selected</span></label>
+        <label class="file-drop" id="customThumbnailDrop"><input name="thumbnail" type="file" accept="image/*"><svg><use href="#i-plus"/></svg><strong>Custom thumbnail</strong><small>Optional JPG, PNG or WebP</small><span data-file-name="thumbnail">Use an image instead</span></label>
+      </div>
+      <section class="thumbnail-generator hidden" id="thumbnailGenerator" aria-labelledby="thumbnailHeading">
+        <div class="thumbnail-generator-heading"><div><h3 id="thumbnailHeading">Choose a thumbnail</h3><p>We picked three moments from your video.</p></div><button type="button" id="regenerateThumbnails"><svg><use href="#i-refresh"/></svg>New picks</button></div>
+        <div class="thumbnail-options" id="thumbnailOptions" role="radiogroup" aria-label="Generated thumbnails"></div>
+      </section>
+      <div class="upload-progress hidden" id="uploadProgress"><span></span><p>Preparing your upload…</p></div>
+      <div class="form-error" id="uploadError" role="alert"></div>
+      <button class="primary-submit" type="submit">Publish</button>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog live-studio-dialog" id="liveStudioDialog">
+    <button class="dialog-close icon-button" type="button" data-close-dialog aria-label="Close live studio"><svg><use href="#i-close"/></svg></button>
+    <header class="studio-header"><div><span class="eyebrow">Whiskr Live Studio</span><h2>Production workspace</h2><p>Build scenes, mix audio, and control the broadcast from one place.</p></div><span class="studio-air-status" id="studioAirStatus"><i></i><span>Preview</span></span></header>
+    <div class="studio-layout">
+      <section class="studio-preview-panel" aria-label="Live stream preview">
+        <div class="studio-preview-toolbar"><span class="studio-scene-name"><i></i>Scene 1</span><span class="studio-drag-hint">Select a source, then drag or resize it on the canvas</span><button id="resetSceneButton" type="button">Reset layout</button></div>
+        <div class="studio-canvas-wrap" id="studioCanvasWrap"><canvas id="studioCanvas" width="1280" height="720" tabindex="0" aria-label="Interactive program canvas"></canvas><div class="studio-selection hidden" id="studioSelectionBox" aria-hidden="true"><span id="studioSelectionLabel">Camera</span><i></i><i></i><i></i><i id="studioResizeHandle"></i></div><span class="studio-preview-label">PROGRAM</span><span class="studio-preview-viewers"><span id="studioViewerCount">0</span> viewers</span></div>
+        <video class="studio-source-video" id="studioScreenSource" muted playsinline></video>
+        <video class="studio-source-video" id="studioCameraSource" muted playsinline></video>
+        <div class="studio-source-actions">
+          <button id="chooseScreenButton" type="button"><svg><use href="#i-screen"/></svg><span><strong>Share a screen</strong><small>Window, tab, or full display</small></span></button>
+          <button id="chooseCameraButton" type="button"><svg><use href="#i-camera"/></svg><span><strong>Camera + microphone</strong><small>Use your browser devices</small></span></button>
+        </div>
+        <p class="studio-hint">Chrome or Firefox will ask exactly what you want to share. Nothing is captured until you approve it.</p>
+        <div class="studio-dock-grid">
+          <section class="studio-dock studio-sources-dock" aria-labelledby="studioSourcesHeading">
+            <header><h3 id="studioSourcesHeading">Sources</h3><span>Scene 1</span></header>
+            <div class="studio-source-list">
+              <button type="button" data-studio-layer="screen"><svg><use href="#i-screen"/></svg><span><strong>Display capture</strong><small id="studioScreenSourceStatus">Not connected</small></span><i class="source-state" id="studioScreenState"></i></button>
+              <button type="button" data-studio-layer="camera"><svg><use href="#i-camera"/></svg><span><strong>Camera</strong><small id="studioCameraSourceStatus">Not connected</small></span><i class="source-state" id="studioCameraState"></i></button>
+              <button type="button" data-studio-layer="text"><span class="source-text-icon">T</span><span><strong>Text overlay</strong><small id="studioTextSourceStatus">Empty</small></span><i class="source-state" id="studioTextState"></i></button>
+              <button type="button" data-studio-layer="chat"><span class="source-chat-icon">•••</span><span><strong>Live chat overlay</strong><small id="studioChatSourceStatus">Hidden</small></span><i class="source-state" id="studioChatState"></i></button>
+            </div>
+          </section>
+          <section class="studio-dock studio-audio-dock" aria-labelledby="studioAudioHeading">
+            <header><h3 id="studioAudioHeading">Audio mixer</h3><span>Level</span></header>
+            <div class="audio-channel">
+              <div class="audio-channel-head"><strong>Mic / Aux</strong><button id="studioMicMuteButton" type="button" aria-pressed="false" aria-label="Mute microphone"><svg><use href="#i-mic"/></svg></button></div>
+              <div class="audio-meter"><span id="studioMicMeter"></span><i></i><i></i></div>
+              <input id="studioMicLevel" type="range" min="0" max="125" value="100" aria-label="Microphone level">
+            </div>
+            <div class="audio-channel">
+              <div class="audio-channel-head"><strong>Desktop audio</strong><button id="studioDesktopMuteButton" type="button" aria-pressed="false" aria-label="Mute desktop audio"><svg><use href="#i-volume"/></svg></button></div>
+              <div class="audio-meter"><span id="studioDesktopMeter"></span><i></i><i></i></div>
+              <input id="studioDesktopLevel" type="range" min="0" max="125" value="100" aria-label="Desktop audio level">
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <form class="studio-controls" id="liveStudioForm">
+        <div class="studio-control-scroll">
+          <div class="studio-section-title studio-section-title-first"><span>Broadcast details</span><small>Public</small></div>
+          <label>Stream title<input id="studioTitle" type="text" maxlength="120" value="Whiskr Live" placeholder="What are you streaming?"></label>
+          <label><span>Streamer username <small class="label-optional">Optional</small></span><input id="studioStreamerName" type="text" maxlength="32" placeholder="e.g. hayden"></label>
+          <label>Stream description<textarea id="studioDescription" rows="2" maxlength="400" placeholder="Tell viewers what this stream is about"></textarea></label>
+          <div class="studio-section-title"><span>Scene inspector</span><small>Drag sources in preview</small></div>
+          <div class="studio-control-grid">
+            <label>Scene<select id="studioLayout"><option value="screen-pip">Screen + camera</option><option value="screen-only">Screen only</option><option value="camera-full">Camera full screen</option><option value="split">Side by side</option></select></label>
+            <label>Camera position<select id="studioCameraPosition"><option value="bottom-right">Bottom right</option><option value="bottom-left">Bottom left</option><option value="top-right">Top right</option><option value="top-left">Top left</option><option value="custom">Custom</option></select></label>
+            <label>Camera size <output id="studioCameraSizeOutput">28%</output><input id="studioCameraSize" type="range" min="16" max="60" value="28"></label>
+            <label>Camera shape<select id="studioCameraShape"><option value="rounded">Rounded</option><option value="circle">Circle</option><option value="square">Square</option></select></label>
+          </div>
+          <div class="studio-section-title"><span>On-screen text</span><small>Optional</small></div>
+          <label>Overlay text<input id="studioOverlayText" type="text" maxlength="80" placeholder="Your name, topic, or callout"></label>
+          <div class="studio-control-grid overlay-controls">
+            <label>Position<select id="studioOverlayPosition"><option value="lower-left">Lower left</option><option value="lower-center">Lower center</option><option value="top-left">Top left</option><option value="custom">Custom</option></select></label>
+            <label>Accent color<input id="studioOverlayColor" type="color" value="#fe2c55"></label>
+            <label class="text-size-control">Text size <output id="studioTextScaleOutput">100%</output><input id="studioTextScale" type="range" min="60" max="225" value="100"></label>
+          </div>
+          <div class="studio-section-title"><span>Live chat overlay</span><small>Latest messages on canvas</small></div>
+          <div class="studio-control-grid overlay-controls">
+            <label>Position<select id="studioChatPosition"><option value="top-right">Top right</option><option value="bottom-right">Bottom right</option><option value="top-left">Top left</option><option value="custom">Custom</option></select></label>
+            <label>Messages<select id="studioChatMessageCount"><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option><option value="6">6</option></select></label>
+            <label class="text-size-control">Overlay size <output id="studioChatScaleOutput">100%</output><input id="studioChatScale" type="range" min="70" max="150" value="100"></label>
+          </div>
+          <p class="studio-tts-note" id="studioTtsStatus">TTS uses a familiar Twitch-style English voice and reads “user said: message.”</p>
+          <div class="studio-toggles">
+            <label for="studioScreenVisible"><input id="studioScreenVisible" type="checkbox" checked><span><svg><use href="#i-screen"/></svg>Share screen</span></label>
+            <label for="studioCameraVisible"><input id="studioCameraVisible" type="checkbox" checked><span><svg><use href="#i-camera"/></svg>Show camera</span></label>
+            <label for="studioMicEnabled"><input id="studioMicEnabled" type="checkbox" checked><span><svg><use href="#i-mic"/></svg>Microphone</span></label>
+            <label for="studioScreenAudio"><input id="studioScreenAudio" type="checkbox" checked><span><svg><use href="#i-volume"/></svg>Screen audio</span></label>
+            <label for="studioChatVisible"><input id="studioChatVisible" type="checkbox"><span><svg><use href="#i-live"/></svg>Chat overlay</span></label>
+            <label for="studioChatTts"><input id="studioChatTts" type="checkbox"><span><svg><use href="#i-volume"/></svg>Chat TTS</span></label>
+          </div>
+          <div class="form-error studio-error" id="studioError" role="alert"></div>
+        </div>
+        <footer class="studio-footer"><span id="studioStatusText">Choose a source or add on-screen text to build your scene.</span><div><button class="studio-end-button" id="endBroadcastButton" type="button" disabled>End stream</button><button class="studio-start-button" id="startBroadcastButton" type="button"><svg><use href="#i-live"/></svg>Start streaming</button></div></footer>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <script src="app.js?v=12" defer></script>
+  <script src="live.js?v=13" defer></script>
+</body>
 </html>
